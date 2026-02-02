@@ -5,7 +5,7 @@ Turn your text into beautifully chaotic, glitchy, Wandoze-level slop.
 Because why type neatly when you can hallucinate?
 
 #### **Examples:**
-```
+```rust
 use microslop::prelude::*;
 
 fn main() {
