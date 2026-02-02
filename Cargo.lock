@@ -4,13 +4,13 @@ version = 4
 
 [[package]]
 name = "microslop"
-version = "0.3.5"
+version = "0.3.6"
 dependencies = [
  "randix",
 ]
 
 [[package]]
 name = "randix"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "74a578338fde716c55560cbd0658b8675e6909e96e614b52fc4784d4e6412b22"
+checksum = "19c8ea7527f429af4942ceba67ca262b6c139c30442a0c1f8bf2e5bd1a840608"
