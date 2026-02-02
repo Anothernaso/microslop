@@ -5,6 +5,19 @@ use crate::slopify::ToSlop;
 use std::panic;
 
 /// Installs a sloppy panic hook.
+///
+/// # Example
+///
+/// ```rust
+/// use microslop::prelude::*;
+///
+/// fn main() {
+///     install_slop_hook();
+///
+///     panic!("This is a sloppy panic!");
+/// }
+/// ```
+///
 pub fn install_slop_hook() {
     panic::set_hook(Box::new(|panic_info| {
         eprintln!("{}", "    panic caught!".to_slop().hallucinate());

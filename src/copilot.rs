@@ -1,4 +1,4 @@
-//! Contains tools to hallucinate like MicroSlop Copilot.
+//! Contains tools to hallucinate, similar to how MicroSlop Copilot hallucinates.
 
 use rand::Rng;
 
@@ -13,15 +13,37 @@ pub const COMB_CHARS: &[char] = &[
 
 /// Allows self to hallucinate.
 pub trait Hallucinate {
+    /// Turns self into a hallucinate, consuming self.
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// String::new("MicroSlop Wandoze").hallucinate();
+    /// ```
+    ///
     fn hallucinate(self) -> Self;
 }
 
 /// Allows an hallucination to be created from self.
 pub trait ToHallucination {
+    /// Creates a new hallucination from &self.
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// "MicroSlop Wandoze".to_hallucination();
+    /// ```
+    ///
     fn to_hallucination(&self) -> String;
 }
 
 impl Hallucinate for String {
+    /// Turns the String into an hallucination, consuming self.
+    ///
+    /// ```rust
+    /// String::new("MicroSlop Wandoze").hallucinate();
+    /// ```
+    ///
     fn hallucinate(mut self) -> String {
         let mut chars: Vec<char> = self.chars().collect();
         let mut rng = rand::rng();
@@ -42,12 +64,34 @@ impl Hallucinate for String {
 }
 
 impl ToHallucination for String {
+    /// Creates a new hallucination from this String
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// let str = "MicroSlop Wandoze".to_owned();
+    /// let delusional_str = str.to_hallucination(); // This doesn't move str
+    ///
+    /// println!("{}", str); // str is still valid
+    /// ```
+    ///
     fn to_hallucination(&self) -> String {
         self.clone().hallucinate()
     }
 }
 
 impl ToHallucination for &str {
+    /// Creates a new hallucination from this &str
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// let str = "MicroSlop Wandoze";
+    /// let delusional_str = str.to_slop(); // This returns an owned String
+    ///
+    /// println!("{}", str); // str is still valid
+    /// ```
+    ///
     fn to_hallucination(&self) -> String {
         self.to_string().hallucinate()
     }
