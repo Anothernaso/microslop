@@ -10,6 +10,9 @@ homepage = "https://github.com/Anothernaso/microslop"
 keywords = ["glitch", "slop", "text", "unicode"]
 categories = ["text-processing"]
 
+[package.metadata.docs.rs]
+all-features = true
+
 [lib]
 crate-type = ["rlib"]
 
