@@ -8,7 +8,7 @@ license = "MIT"
 repository = "https://github.com/Anothernaso/microslop"
 homepage = "https://github.com/Anothernaso/microslop"
 keywords = ["glitch", "slop", "text", "unicode"]
-categories = ["text-processing", "unicode"]
+categories = ["text-processing"]
 
 [lib]
 crate-type = ["rlib"]
