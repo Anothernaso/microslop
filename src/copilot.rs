@@ -49,7 +49,7 @@ impl Hallucinate for String {
             let comb_count =
                 randix::rand_range_f32(3., 6.).expect("failed to get random f32 in range") as usize;
             for _ in 0..comb_count {
-                let comb_char = COMB_CHARS[randix::rand_range_f32(0., COMB_CHARS.len() as f32 + 1.)
+                let comb_char = COMB_CHARS[randix::rand_range_f32(0., COMB_CHARS.len() as f32)
                     .expect("failed to get random f32 in range")
                     as usize];
                 chars.insert(i, comb_char);
