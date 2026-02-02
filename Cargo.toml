@@ -1,6 +1,6 @@
 [package]
 name = "microslop"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Anatnaso <antondev@kuthy.com>"]
 edition = "2024"
 description = "Turn your text into beautifully chaotic, glitchy, Wandoze-level slop."
