@@ -1,7 +1,5 @@
 //! Tools to turn text into slop, just like what MicroSlop are doing to Wandoze 11.
 
-use rand::Rng;
-
 /// Allows self to turn into slop.
 pub trait Slopify {
     /// Turns self into slop, consuming self.
@@ -39,10 +37,9 @@ impl Slopify for String {
     ///
     fn slopify(mut self) -> String {
         let mut chars: Vec<char> = self.chars().collect();
-        let mut rng = rand::rng();
 
         for i in 0..chars.len() {
-            let chance: f32 = rng.random();
+            let chance = randix::rand_f32().expect("failed to get random f64");
 
             if chance < 0.35 {
                 chars[i] = chars[i].to_ascii_lowercase()

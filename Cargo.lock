@@ -31,6 +31,7 @@ name = "microslop"
 version = "0.3.3"
 dependencies = [
  "rand",
+ "randix",
 ]
 
 [[package]]
@@ -94,6 +95,12 @@ checksum = "76afc826de14238e6e8c374ddcc1fa19e374fd8dd986b0d2af0d02377261d83c"
 dependencies = [
  "getrandom",
 ]
+
+[[package]]
+name = "randix"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "74a578338fde716c55560cbd0658b8675e6909e96e614b52fc4784d4e6412b22"
 
 [[package]]
 name = "syn"

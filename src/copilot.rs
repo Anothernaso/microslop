@@ -1,7 +1,5 @@
 //! Contains tools to hallucinate, similar to how MicroSlop Copilot hallucinates.
 
-use rand::Rng;
-
 pub const COMB_CHARS: &[char] = &[
     '\u{0300}', '\u{0301}', '\u{0302}', '\u{0303}', '\u{0304}', '\u{0305}', '\u{0306}', '\u{0307}',
     '\u{0308}', '\u{0309}', '\u{030A}', '\u{030B}', '\u{030C}', '\u{030D}', '\u{030E}', '\u{030F}',
@@ -46,12 +44,14 @@ impl Hallucinate for String {
     ///
     fn hallucinate(mut self) -> String {
         let mut chars: Vec<char> = self.chars().collect();
-        let mut rng = rand::rng();
 
         for i in (0..chars.len()).rev() {
-            let comb_count = rng.random_range(3..=6);
+            let comb_count =
+                randix::rand_range_f32(3., 6.).expect("failed to get random f32 in range") as usize;
             for _ in 0..comb_count {
-                let comb_char = COMB_CHARS[rng.random_range(0..COMB_CHARS.len())];
+                let comb_char = COMB_CHARS[randix::rand_range_f32(0., COMB_CHARS.len() as f32 + 1.)
+                    .expect("failed to get random f32 in range")
+                    as usize];
                 chars.insert(i, comb_char);
             }
         }
