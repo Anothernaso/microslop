@@ -1,3 +1,5 @@
+//! Contains tools to hallucinate like MicroSlop Copilot.
+
 use rand::Rng;
 
 pub const COMB_CHARS: &[char] = &[
@@ -9,12 +11,12 @@ pub const COMB_CHARS: &[char] = &[
     '\u{0328}', '\u{0329}',
 ];
 
-/// Allows self to hallucinate
+/// Allows self to hallucinate.
 pub trait Hallucinate {
     fn hallucinate(self) -> Self;
 }
 
-/// Allows an hallucination to be created from self
+/// Allows an hallucination to be created from self.
 pub trait ToHallucination {
     fn to_hallucination(&self) -> String;
 }

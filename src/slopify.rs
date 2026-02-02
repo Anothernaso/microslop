@@ -1,11 +1,13 @@
+//! Tools to turn text into slop, just like MicroSlop Wandoze.
+
 use rand::Rng;
 
-/// Allows self to turn into slop
+/// Allows self to turn into slop.
 pub trait Slopify {
     fn slopify(self) -> Self;
 }
 
-/// Allows slop to be created from self
+/// Allows slop to be created from self.
 pub trait ToSlop {
     fn to_slop(&self) -> String;
 }
