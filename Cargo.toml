@@ -17,4 +17,4 @@ all-features = true
 crate-type = ["rlib", "cdylib"]
 
 [dependencies]
-randix = "0.2.1"
+randix = "0.3.2"
