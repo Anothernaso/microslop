@@ -2,4 +2,6 @@
 
 set -e
 
-gcc example.c -lmicroslop -o ./bin/example
+./install_lib.sh
+
+gcc example.c -L./target/debug/libmicroslop.so -lmicroslop -o ./bin/example
